@@ -1,5 +1,13 @@
 # 3 Pyspark Dataframe: Handling Missing Values
 
+1. [Dropping Columns, rows ](#schema1)
+2. [Filling the missing values](#schema2)
+3. [Handling Missing values by Mean, Median And Mode](#schema3)
+
+<hr>
+
+<a name="schema1"></a>
+
 # 1. Dropping Columns, rows
 ~~~python
 df_spark.drop("Name").show()
@@ -64,6 +72,10 @@ df_spark.na.drop(how="any",subset=["Experience","Name"]).show()
 +---------+---+----------+------+
 ~~~
 
+<hr>
+
+<a name="schema2"></a>
+
 # 2. Filling the missing values
 ~~~python
 df_spark.na.fill('Missing values').show()
@@ -98,7 +110,11 @@ df_spark.na.fill(0,['Experience','age']).show()
 
 ~~~
 
-# 3. Handling Missing values by Mean, MEdian And Mode
+<hr>
+
+<a name="schema3"></a>
+
+# 3. Handling Missing values by Mean, Median And Mode
 ~~~python
 from pyspark.ml.feature import Imputer
 
